@@ -1,0 +1,8 @@
+{
+  "name": "owl",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "8205eedf"
+}
