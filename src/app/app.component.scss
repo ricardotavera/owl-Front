@@ -103,6 +103,31 @@ ion-menu.ios ion-note {
   padding-right: 16px;
 }
 
+ion-tab-bar {
+  background-color: #1ce7a3;
+ 
+
+
+  ion-tab-button {
+    background-color: #1ce7a3;
+    --padding-bottom: 4px;
+    --padding-end: 4px;
+    --padding-start: 4px;
+    --padding-top: 4px;
+    --ripple-color: #1e1e1e;
+
+    ion-icon {
+     
+      color: #2f4459;
+    }
+
+    ion-label {
+      color: #2f4459;
+    }
+  }
+ 
+}
+
 ion-menu.ios ion-note {
   margin-bottom: 8px;
 }

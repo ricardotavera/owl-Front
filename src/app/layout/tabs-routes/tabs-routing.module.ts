@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
-import { TabsComponent } from './layout/tabs/tabs.component'
+import { TabsComponent } from '../tabs/tabs.component'
 
 const routes: Routes = [
   {
@@ -13,7 +12,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('./views/profile/profile.component').then(m => m.ProfileComponent)
+            loadChildren: () => import('../../views/profile/profile.component').then(m => m.ProfileComponent)
           }
         ]
       },
@@ -22,7 +21,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('./views/home/home.component').then(m => m.HomeComponent)
+            loadChildren: () => import('../../views/home/home.component').then(m => m.HomeComponent)
           }
         ]
       },
@@ -31,7 +30,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('./views/report/report.component').then(m => m.ReportComponent)
+            loadChildren: () => import('../../views/report/report.component').then(m => m.ReportComponent)
           }
         ]
       },
@@ -41,7 +40,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('./views/notifications/notifications.component').then(m => m.NotificationsComponent)
+            loadChildren: () => import('../../views/notifications/notifications.component').then(m => m.NotificationsComponent)
           }
         ]
       },
@@ -50,7 +49,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('./views/info/info.component').then(m => m.InfoComponent)
+            loadChildren: () => import('../../views/info/info.component').then(m => m.InfoComponent)
           }
         ]
       }
@@ -64,9 +63,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class TabsRoutingModule { }
