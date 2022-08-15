@@ -1,17 +1,20 @@
 
 ion-tab-bar {
     background-color: #1ce7a3;
-    margin: 0px 7px 7px;
+    /* margin: 0px 7px 7px; */
     border-radius: 7px;
     border: none;
-  
+    
 
     ion-tab-button.tab-selected {
 
       background-color: #fff;
-      border-radius: 7px;
+      border-radius: 10px;
       border: none;
       
+      ion-badge {
+        background-color: #1ce7a3;
+      } 
       /* ion-icon {
 
        
@@ -21,6 +24,10 @@ ion-tab-bar {
       ion-label {
         color: #fff;
       } */
+    }
+
+    ion-badge {
+      background-color: #fff;
     }
 
     ion-tab-button {
@@ -47,8 +54,11 @@ ion-tab-bar {
   
   ion-menu.ios ion-note {
     margin-bottom: 8px;
+   
   }
-  
+
+
+
   ion-note {
     display: inline-block;
     font-size: 16px;
@@ -61,7 +71,7 @@ ion-tab-bar {
   }
 
   ion-menu ion-content {
-    --background: var(--ion-item-background, var(--ion-background-color, #fff));
+    background-color: transparent;
   }
   
   ion-menu.md ion-content {
@@ -166,17 +176,15 @@ ion-tab-bar {
   }
 
 
-  @media only screen and (min-width: 1000px) {
+  /* @media only screen and (min-width: 1000px) {
     ion-tabs {
       visibility: hidden;
     }
 
-    ion-header {
-      background-color: transparent;
-    }
+    
 
 
-   }
+   } */
 
    @media only screen and (max-width: 999px){
     ion-split-pane {
@@ -184,7 +192,9 @@ ion-tab-bar {
       
     }
 
-    ion-header {
-      visibility: hidden;
-    }
+ 
    }
+
+.sidemenu {
+  --side-width: 250px;
+}
