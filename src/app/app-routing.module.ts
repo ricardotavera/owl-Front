@@ -1,66 +1,37 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-import { TabsComponent } from './layout/tabs/tabs.component'
 
 const routes: Routes = [
   {
     path: 'tabs',
-    component: TabsComponent,
-    children: [
-      {
-        path: 'profile',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('./views/profile/profile.component').then(m => m.ProfileComponent)
-          }
-        ]
-      },
-      {
-        path: 'home',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('./views/home/home.component').then(m => m.HomeComponent)
-          }
-        ]
-      },
-      {
-        path: 'report',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('./views/report/report.component').then(m => m.ReportComponent)
-          }
-        ]
-      },
-
-      {
-        path: 'noti',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('./views/notifications/notifications.component').then(m => m.NotificationsComponent)
-          }
-        ]
-      },
-      {
-        path: 'info',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('./views/info/info.component').then(m => m.InfoComponent)
-          }
-        ]
-      }
-    ]
+    loadChildren: () => import('./layout/tablinks/tablinks.module').then(m => m.TablinksPageModule)
   },
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'home'
-  }
+    redirectTo: 'tabs',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./views/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./views/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'report',
+    loadChildren: () => import('./views/report/report.module').then( m => m.ReportPageModule)
+  },
+  {
+    path: 'notifications',
+    loadChildren: () => import('./views/notifications/notifications.module').then( m => m.NotificationsPageModule)
+  },
+  {
+    path: 'info',
+    loadChildren: () => import('./views/info/info.module').then( m => m.InfoPageModule)
+  },
 ];
 
 @NgModule({
