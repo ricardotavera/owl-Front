@@ -1,30 +1,34 @@
 
+
+<!-- Side Menus -->
+<!-- <ion-split-pane contentId="main-content" class="sidemenu">
+  <ion-menu contentId="main-content" menuId="first" >
+    <ion-content>
+      <ion-list id="inbox-list">
+        <ion-list-header>Hi {{username}}!</ion-list-header>
+        <br>
+
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+          <ion-item routerDirection="root" tab="[p.tab]" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+            <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon"></ion-icon>
+            <ion-label>{{ p.title }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+
+    </ion-content>
+  </ion-menu>
+
+</ion-split-pane>
+ -->
+
+<!-- Bottom menus -->
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="profile">
-      <ion-icon name="settings-sharp"></ion-icon>
-      <ion-label>Profile</ion-label>
-      <ion-badge>6</ion-badge>
-    </ion-tab-button>
-
-    <ion-tab-button tab="report">
-      <ion-icon name="push-sharp"></ion-icon>
-      <ion-label>New Report</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="home">
-      <ion-icon name="home-sharp"></ion-icon>
-      <ion-label>Home</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="noti">
-      <ion-icon name="notifications-sharp"></ion-icon>
-      <ion-label>Notifications</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="info">
-      <ion-icon name="information-circle-sharp"></ion-icon>
-      <ion-label>Information</ion-label>
+    <ion-tab-button *ngFor="let i of appPages" tab="{{i.tab}}" >
+      <ion-icon name="{{i.icon}}" ></ion-icon>
+      <ion-label>{{ i.title }}</ion-label>
+      <ion-badge *ngIf="i.badge"> {{i.badge}}</ion-badge>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
