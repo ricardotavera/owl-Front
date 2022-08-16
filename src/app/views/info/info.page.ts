@@ -11,5 +11,6 @@ export class InfoPage implements OnInit {
 
   ngOnInit() {
   }
+  
 
 }
