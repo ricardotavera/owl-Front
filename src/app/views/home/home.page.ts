@@ -18,14 +18,30 @@ export class HomePage implements OnInit {
   ionViewDidEnter() { this.leafletMap(); }
 
   leafletMap() {
-    this.map = Leaflet.map('mapId').setView([7.1193, -73.1227], 13);
+    this.map = Leaflet.map('mapId', {
+      center: [ 7.13366, -73.11934 ],
+      zoom: 15,
+      renderer: Leaflet.canvas()
+    });
     Leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: 'edupala.com © Angular LeafLet',
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }).addTo(this.map);
-
-    Leaflet.marker([7.12, -73.1227]).addTo(this.map).bindPopup('Bucaramanga').openPopup();
-    
+    this.addMarker();
    
+  }
+  addMarker() {
+    
+    const homeMarker = Leaflet.marker({ lat: 7.13366, lng: -73.11934 },{draggable : true});
+    homeMarker.addTo(this.map);
+    homeMarker.bindPopup('<div><h3>{{ modalidad }}</h3><p>{{ hora }}</p><br><p>{{ drescrip }}</p></div><br><button id="poppup">Mas info</button>', {
+      closeButton: true
+    });
+
+    homeMarker.on('dragend', function (e) 
+    {
+      console.log(homeMarker.getLatLng().lat)
+      console.log(homeMarker.getLatLng().lng)
+    });
   }
 
   /** Remove map when we have multiple map object */
