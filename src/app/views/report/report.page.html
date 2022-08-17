@@ -1,0 +1,47 @@
+<ion-content>
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Nuevo Reporte</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+
+        <br>
+        <br>
+
+        <ion-item>
+            <ion-label position="stacked" >Crimen</ion-label>
+            <ion-select placeholder="Seleccione una modalidad">
+                <ion-select-option value="atraco">Atraco</ion-select-option>
+                <ion-select-option value="acoso">Acoso sexual</ion-select-option>
+                <ion-select-option value="sin intimidacion">Robo sin intimidacion</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <br>
+
+        <ion-item>
+            <ion-label position="stacked" style="padding: 5px;">Fecha y Hora</ion-label>
+            <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+            <ion-modal [keepContentsMounted]="true">
+                <ng-template>
+                    <ion-datetime id="datetime"></ion-datetime>
+                </ng-template>
+            </ion-modal>
+            <br>
+        </ion-item>
+        <br>
+        <ion-item>
+            <ion-label position="stacked">Selecciona Ubicacion</ion-label>
+            <ion-input type="text"  ></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+            <ion-label position="stacked">Detalles</ion-label>
+            <ion-textarea type="text"  placeholder="Describa detalles sobre el crimen"></ion-textarea>
+            
+        </ion-item>
+        
+    </ion-content>
+</ion-content>
