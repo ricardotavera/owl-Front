@@ -13,7 +13,9 @@ import { TablinksPageModule } from './layout/tablinks/tablinks.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, TablinksPageModule],
+  imports: [BrowserModule, IonicModule.forRoot({
+    mode: 'ios'
+}), AppRoutingModule, TablinksPageModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
