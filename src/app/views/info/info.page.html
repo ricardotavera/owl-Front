@@ -1,46 +1,54 @@
 <ion-app>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title id="header">Informacion</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  
-    <ion-content class="ion-padding">
-      <p>Recuerda que nadie está
-        excento de vivir una situación de inseguridad.
-        <br>
-        A continuación una serie de tips de como prevenir y actuar antes una situación de este indole.</p>
-        <br>
-        <ion-icon id="document" name="document"></ion-icon>
-        <br>
-        <br>
-        <br>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title id="header">Informacion</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-        <div id="cais"> 
-            <h1>CAIS cercanos</h1>
-        
-        <ion-list>
-            <ion-item>
-              <ion-select placeholder="Elige barrio">
-                <ion-select-option value="San alonso">San Alonso</ion-select-option>
-                <ion-select-option value="La universidad">La universidad</ion-select-option>
-                <ion-select-option value="San francisco">San Francisco</ion-select-option>
-              </ion-select>
-            </ion-item>
-          </ion-list>
-        
-          <ion-item>
-            <ion-label >
-                <p>Informacion del CAI</p> 
-            </ion-label>
-          </ion-item>
-        </div>
-        
-       
-    </ion-content>
-    <ion-footer>
-        <ion-toolbar>
-          <ion-title>Donde existe unidad, siempre existe <br>victoria.<br> – Publilius Syrus.</ion-title>
-        </ion-toolbar>
-      </ion-footer>
-  </ion-app>
+  <ion-content class="ion-padding">
+    <div id="cais">
+      <h1>CAIS cercanos</h1>
+
+      <ion-list>
+        <ion-item>
+          <ion-select placeholder="Elige barrio">
+            <ion-select-option value="San alonso">San Alonso</ion-select-option>
+            <ion-select-option value="La universidad">La universidad</ion-select-option>
+            <ion-select-option value="San francisco">San Francisco</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-item>
+        <ion-label>
+          <p>Informacion del CAI</p>
+        </ion-label>
+      </ion-item>
+    </div>
+ 
+    <br>
+    <ion-card>
+      <img src="https://imageproxy.youversionapi.com/https://s3.amazonaws.com/yvplans/21622/640x360.jpg" atl="care" />
+      <ion-card-header>
+
+      </ion-card-header>
+      <ion-card-content>
+        Recuerda que nadie está
+      excento de vivir una situación de inseguridad.
+      
+      A continuación una serie de tips de como prevenir y actuar antes una situación de este indole.
+
+        <ion-button class="icon" (click)="presentAlert()">
+          <ion-icon slot="icon-only" name="document"></ion-icon>
+        </ion-button>
+
+      </ion-card-content>
+    </ion-card>
+
+    <h6 class="footerr">Donde existe unidad, siempre existe <br>victoria.<br> – Publilius Syrus. </h6>
+
+
+
+  </ion-content>
+
+</ion-app>
