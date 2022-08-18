@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 *,
 *:after,
 *:before {
@@ -480,4 +481,17 @@ body {
 #signup.is-selected,
 #reset-password.is-selected {
     display: block;
+=======
+ion-item {
+    --background: #ffffff;
+    --color: rgb(0, 0, 0);
+}
+
+ion-button {
+    --background: #ffffff;
+}
+
+.menu {
+    background-color: #fff;
+>>>>>>> Stashed changes
 }

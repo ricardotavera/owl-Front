@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'tabs',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -31,7 +31,8 @@ const routes: Routes = [
   {
     path: 'info',
     loadChildren: () => import('./views/info/info.module').then( m => m.InfoPageModule)
-  },  {
+  },
+  {
     path: 'login',
     loadChildren: () => import('./welcome/login/login.module').then( m => m.LoginPageModule)
   },
