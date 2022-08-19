@@ -1,9 +1,12 @@
 .title {
     margin-bottom: 30px;
+    
 }
 
 .title h4 {
-    color: var(--ion-color-primary);
+    color: #1ce8a4;
+    text-align: center;
+    
 }
 
 .title p {
@@ -14,4 +17,20 @@
 
 .forget a {
     font-size: small !important;
+}
+
+
+
+.head {
+    color: #30445a;
+}
+
+.usd {
+    color: #30445a;
+    background-color: rgb(245, 245, 245);
+    margin-top: 10px;
+    
+}
+.botn{
+    margin-top: 10px;
 }
