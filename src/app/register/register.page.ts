@@ -18,5 +18,8 @@ export class RegisterPage implements OnInit {
   async dismiss() {
     return await this.modalCtrl.dismiss();
   }
+  async register() {
+    return await this.modalCtrl.dismiss();
+  }
 
 }

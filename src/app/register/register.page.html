@@ -1,25 +1,29 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>Registrate</ion-title>
+        <ion-title class="head" >Registrate</ion-title>
     </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
     <div class="title">
-        <h4>Registrate</h4>
+        <h4>Ingresa tu informacion</h4>
 
     </div>
 
-    <ion-input placeholder="Nombre" class="primary-input"></ion-input>
-    <ion-input placeholder="Usuario" class="primary-input"></ion-input>
-    <ion-input placeholder="Contraseña" type="password" class="primary-input"></ion-input>
+    <ion-input placeholder="Nombre" class="jos"></ion-input>
+    <ion-input placeholder="Usuario" class="jos"></ion-input>
+    <ion-input placeholder="Contraseña" type="password" class="jos"></ion-input>
+    <br>
 
-    <p>Al registrate aceptas terminos y condiciones</p>
+    <a class="fab" href="#" >Al registrate aceptas terminos y condiciones</a>
 
-    <div class="ion-margin-top">
-        <ion-button expand="block" (click)="register()">Registrase</ion-button>
+    <br>
+    <br>
+
+    <div >
+        <ion-button class="butn" expand="block" fill="outline" (click)="register()">Registrate</ion-button>
     </div>
 
-    <div class="ion-margin-top ion-text-center">
-        <ion-button (click)="dismiss()" fill="outline">Cerrar</ion-button>
+    <div >
+        <ion-button class="butn" expand="block" (click)="dismiss()" fill="outline">Cerrar</ion-button>
     </div>
 </ion-content>

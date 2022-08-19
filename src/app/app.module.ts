@@ -18,10 +18,6 @@ import {RegisterPageModule} from './register/register.module';
   declarations: [AppComponent],
 
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, TablinksPageModule, LoginPageModule, WelcomePageModule, RegisterPageModule],
-  imports: [BrowserModule, IonicModule.forRoot({
-    mode: 'ios'
-}), AppRoutingModule, TablinksPageModule],
-
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
