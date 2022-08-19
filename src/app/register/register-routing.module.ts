@@ -1,17 +1,28 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-import { RegisterPage } from './register.page';
+
 
 const routes: Routes = [
   {
-    path: '',
-    component: RegisterPage
-  }
+    path: 'taps',
+    loadChildren: () => import('./register.module').then(m => m.RegisterPageModule)
+  },
+  {
+  path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+     path: 'taps',
+      loadChildren: () => import('../layout/tablinks/tablinks.module').then( m => m.TablinksPageModule)
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+  ],
+  exports: [RouterModule]
 })
 export class RegisterPageRoutingModule {}
