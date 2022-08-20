@@ -9,7 +9,7 @@
 
         <br>
         <br>
-
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
         <ion-item>
             <ion-label position="stacked" >Crimen</ion-label>
             <ion-select placeholder="Seleccione una modalidad">
@@ -22,6 +22,7 @@
 
         <ion-item>
             <ion-label position="stacked" style="padding: 5px;">Fecha y Hora</ion-label>
+            <br>
             <ion-datetime-button datetime="datetime"></ion-datetime-button>
 
             <ion-modal [keepContentsMounted]="true">
@@ -34,41 +35,27 @@
         <br>
         <ion-item>
             <ion-label position="stacked">Selecciona Ubicacion</ion-label>
-            <ion-button (click)="isMapPikerOpen = true" id="open-picker">
-               Selecciona la ubicacion
-            </ion-button>
+            <br>
+            <div class="location-data">
+                <ion-button (click)="openMapPicker()" id="open-picker" color="success">
+                    Selecciona la ubicacion
+                 </ion-button>
+                 <span id="crime-location"></span>
+            </div>
+           
         </ion-item>
         <br>
         <ion-item>
             <ion-label position="stacked">Detalles</ion-label>
-            <ion-textarea type="text"  placeholder="Describa detalles sobre el crimen"></ion-textarea>
+            <ion-textarea type="text"  placeholder="Describa detalles sobre el crimen" style="    height: 122px;"></ion-textarea>
             
         </ion-item>
+        <br>
+        <ion-button (click)="presentAlert()" expand="block" color="success">
 
-
-        <ion-modal trigger="open-picker" (willDismiss)="onWillDismiss($event)">
-            <ng-template>
-                <ion-content>
-
-                    <ion-header>
-                        <ion-toolbar>
-                          <ion-title>Seleccionar locacion</ion-title>
-                          <ion-buttons slot="start">
-                            <ion-button (click)="cancel()" ><ion-icon name="arrow-back-sharp"></ion-icon></ion-button>
-                          </ion-buttons>
-                          <ion-buttons slot="end">
-                            <ion-button (click)="confirm()" >Aceptar</ion-button>
-                          </ion-buttons>
-                        </ion-toolbar>
-                      </ion-header>
-                      
-                      <div id="mapPicker" style="width: 100%; height: 100%"></div>
-                      
-                </ion-content>
-              
-              
-            </ng-template>
-          </ion-modal>
+             Publicar
+        </ion-button>
+        </form>
         
     </ion-content>
 

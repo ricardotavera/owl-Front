@@ -7,7 +7,13 @@ const routes: Routes = [
   {
     path: '',
     component: LoginPage
-  }
+  },
+  
+    {
+      path: 'tabs',
+      loadChildren: () => import('../layout/tablinks/tablinks.module').then(m => m.TablinksPageModule)
+    },
+  
 ];
 
 @NgModule({

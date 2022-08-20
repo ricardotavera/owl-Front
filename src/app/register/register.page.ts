@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-
+import { Router } from '@angular/router';
 
 
 
@@ -13,6 +13,7 @@ export class RegisterPage implements OnInit {
 
   constructor(
     public modalCtrl: ModalController,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -22,6 +23,8 @@ export class RegisterPage implements OnInit {
     return await this.modalCtrl.dismiss();
   }
   async register() {
+    this.dismiss();
+    this.router.navigateByUrl('tabs');   
     return await this.modalCtrl.dismiss();
   }
  

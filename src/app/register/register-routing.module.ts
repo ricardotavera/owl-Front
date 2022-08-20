@@ -5,17 +5,17 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'taps',
-    loadChildren: () => import('./register.module').then(m => m.RegisterPageModule)
+    path: 'tabs',
+    loadChildren: () => import('../layout/tablinks/tablinks.module').then(m => m.TablinksPageModule)
   },
   {
   path: '',
-    redirectTo: 'home',
+    redirectTo: 'welcome',
     pathMatch: 'full'
   },
   {
-     path: 'taps',
-      loadChildren: () => import('../layout/tablinks/tablinks.module').then( m => m.TablinksPageModule)
+     path: 'welcome',
+      loadChildren: () => import('../welcome/welcome.module').then( m => m.WelcomePageModule)
   },
 ];
 
