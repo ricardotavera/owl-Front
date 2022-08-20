@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'tabs',
+    redirectTo: 'welcome',
     pathMatch: 'full'
   },
   {
@@ -31,10 +31,21 @@ const routes: Routes = [
   {
     path: 'info',
     loadChildren: () => import('./views/info/info.module').then( m => m.InfoPageModule)
-  },  {
-    path: 'login',
-    loadChildren: () => import('./welcome/login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+ 
+  {
+    path: 'welcome',
+    loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+
 
 ];
 

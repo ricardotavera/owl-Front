@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title class="head">Registrate</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+    <div class="title">
+        <h4>Ingresa tu informacion</h4>
+
+    </div>
+
+    <ion-input placeholder="Correo Electronico" type="email" class="jos"></ion-input>
+    <ion-input placeholder="Usuario" class="jos"></ion-input>
+    <ion-input placeholder="Contraseña" type="password" class="jos"></ion-input>
+    <br>
+    <ion-item>
+        <ion-label>Aceptar terminos y condiciones</ion-label>
+        <ion-checkbox color="primary"></ion-checkbox>
+    </ion-item>
+
+
+    <br>
+    <br>
+
+    <div>
+        <ion-button class="butn" expand="block" fill="outline" (click)="register()">Registrate</ion-button>
+    </div>
+
+    <div>
+        <ion-button class="butn" expand="block" (click)="dismiss()" fill="outline">Cerrar</ion-button>
+    </div>
+</ion-content>
