@@ -27,7 +27,6 @@
   <ion-tab-bar slot="bottom">
     <ion-tab-button *ngFor="let i of appPages" tab="{{i.tab}}" >
       <ion-icon name="{{i.icon}}" ></ion-icon>
-      <ion-label>{{ i.title }}</ion-label>
       <ion-badge *ngIf="i.badge"> {{i.badge}}</ion-badge>
     </ion-tab-button>
   </ion-tab-bar>

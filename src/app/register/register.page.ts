@@ -24,8 +24,9 @@ export class RegisterPage implements OnInit {
   }
   async register() {
     this.dismiss();
-    this.router.navigateByUrl('tabs');   
-    return await this.modalCtrl.dismiss();
+    this.router.navigateByUrl('tabs'); 
+    
+      
   }
  
   

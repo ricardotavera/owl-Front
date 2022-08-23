@@ -14,7 +14,7 @@ export class HomePage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {  }
   ionViewDidEnter() { this.leafletMap(); }
 
   leafletMap() {

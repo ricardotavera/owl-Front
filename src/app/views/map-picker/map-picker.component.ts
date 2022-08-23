@@ -68,14 +68,7 @@ export class MapPickerComponent implements OnInit {
 });
 
 
-marker.on('click', jump);
 
-function jump(e) {
-  this.bounce(2) // bounce 2 times
-  .on('bounceend',function() {
-      console.log('bounce end');
-  }); 
-}
   
   }
 

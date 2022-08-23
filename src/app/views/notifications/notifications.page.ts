@@ -23,12 +23,9 @@ export class NotificationsPage implements OnInit {
 
     
     for(let i=0; i<50; i++){
-      console.log(i)
       this.posts[i]  = { title: `Post ${i}`, date: new Date().toDateString(), location: 'Place'}
     }
 
-
-    console.log(this.posts)
     
   }
 
@@ -37,8 +34,5 @@ export class NotificationsPage implements OnInit {
     this.router.navigateByUrl('tabs'); 
   }
 
-  
 
-
-  
 }
