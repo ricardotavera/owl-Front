@@ -1,0 +1,47 @@
+#header {
+    text-align: center;
+}
+
+#cais {
+    text-align: center;
+    color: #30445a;
+    padding-top: 10px;
+}
+
+p {
+    color: #30445a;
+}
+
+
+#inf {
+    color: #1781f3;
+}
+
+
+
+
+
+.icon {
+
+    --background: #1ce8a4;
+    width: 100%;
+    height: 70%;
+
+    .button-native::after {
+        padding: 21px;
+    }
+
+    ion-icon {
+        padding: 10px;
+        font-size: 2.5rem;
+    }
+
+}
+inner-scroll scroll-y{
+    background-color: #1781f3;
+}
+h6 {
+    color: #30445a;
+    padding-top: 60px;
+    
+}

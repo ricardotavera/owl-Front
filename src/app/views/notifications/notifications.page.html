@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Notificaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <cdk-virtual-scroll-viewport itemSize="100%" minBufferPx="10" maxBufferPx="30">
+    <ion-list  *ngIf="posts.length > 0">
+      <ion-item *cdkVirtualFor="let item of posts" button (click)="goToMap()">
+        
+        
+          
+          <ion-label> 
+           
+           <h2>{{item.title }}</h2> 
+           <p>{{item.date}}</p>
+          </ion-label>
+          <ion-icon slot="end" name="location"></ion-icon>
+        
+
+      </ion-item>
+    </ion-list>
+  </cdk-virtual-scroll-viewport>
+</ion-content>
