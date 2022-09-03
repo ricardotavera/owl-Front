@@ -31,7 +31,7 @@ export class NotificationsPage implements OnInit {
 
 
   goToMap(){
-    this.router.navigateByUrl('tabs'); 
+    this.router.navigateByUrl('/tabs'); 
   }
 
 

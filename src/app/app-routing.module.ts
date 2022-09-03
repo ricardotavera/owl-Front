@@ -3,13 +3,14 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-  {
-    path: 'tabs',
-    loadChildren: () => import('./layout/tablinks/tablinks.module').then(m => m.TablinksPageModule)
-  },
+
   {
     path: 'welcome',
     loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./layout/tablinks/tablinks.module').then(m => m.TablinksPageModule)
   },
   {
     path: '',

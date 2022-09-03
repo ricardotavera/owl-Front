@@ -6,17 +6,9 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'tabs',
-    loadChildren: () => import('../layout/tablinks/tablinks.module').then(m => m.TablinksPageModule)
+    loadChildren: () => import('../../layout/tablinks/tablinks.module').then(m => m.TablinksPageModule)
   },
-  {
-  path: '',
-    redirectTo: 'welcome',
-    pathMatch: 'full'
-  },
-  {
-     path: 'welcome',
-      loadChildren: () => import('../welcome/welcome.module').then( m => m.WelcomePageModule)
-  },
+ 
 ];
 
 @NgModule({

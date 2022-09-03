@@ -6,8 +6,30 @@ import { WelcomePage } from './welcome.page';
 const routes: Routes = [
   {
     path: '',
-    component: WelcomePage
-  }
+    component: WelcomePage,
+    children: [
+
+      {path: 'login',
+      loadChildren: () => import('../views/login/login.module').then(m => m.LoginPageModule)
+      },
+
+      {path: 'signup',
+      loadChildren: () => import('../views/register/register.module').then(m => m.RegisterPageModule)
+      },
+      
+      {
+        path: '',
+        redirectTo: '/welcome',
+        pathMatch: 'full'
+      }
+    ]
+  },
+  ,
+    {
+      path: '',
+      pathMatch: 'full',
+      redirectTo: '/welcome'
+    }
 ];
 
 @NgModule({
