@@ -5,9 +5,15 @@ import { WelcomePage } from './welcome.page';
 
 const routes: Routes = [
   {
-    path: '',
-    component: WelcomePage
-  }
+    path: 'welcome',
+    component: WelcomePage,
+  },
+  ,
+    {
+      path: '',
+      pathMatch: 'full',
+      redirectTo: 'welcome'
+    }
 ];
 
 @NgModule({

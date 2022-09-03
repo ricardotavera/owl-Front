@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { LoginPage } from '../login/login.page';
-import { RegisterPage } from '../register/register.page';
+import { LoginPage } from '../views/login/login.page';
+import { RegisterPage } from '../views/register/register.page';
 
 @Component({
   selector: 'app-welcome',
@@ -30,7 +30,7 @@ export class WelcomePage implements OnInit {
     return await modal.present();
   }
 
-  async register() {
+  async signup() {
     const modal = await this.modalCtrl.create({
       component: RegisterPage,
       animated: true,

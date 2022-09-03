@@ -44,8 +44,8 @@ export class HomePage implements OnInit {
     });
   }
 
-  /** Remove map when we have multiple map object */
-  ngOnDestroy() {
+
+  ionViewWillLeave() {
     this.map.remove();
   }
 }
