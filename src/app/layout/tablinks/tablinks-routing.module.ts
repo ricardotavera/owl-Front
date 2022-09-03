@@ -32,7 +32,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'profile',
+        redirectTo: 'home',
         pathMatch: 'full'
       }
     ]

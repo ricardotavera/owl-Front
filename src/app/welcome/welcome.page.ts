@@ -17,7 +17,7 @@ export class WelcomePage implements OnInit {
 
   ngOnInit() {
   }
-/* 
+
   async login() {
     const modal = await this.modalCtrl.create({
       component: LoginPage,
@@ -30,7 +30,7 @@ export class WelcomePage implements OnInit {
     return await modal.present();
   }
 
-  async register() {
+  async signup() {
     const modal = await this.modalCtrl.create({
       component: RegisterPage,
       animated: true,
@@ -40,5 +40,5 @@ export class WelcomePage implements OnInit {
     })
 
     return await modal.present();
-  } */
+  }
 }

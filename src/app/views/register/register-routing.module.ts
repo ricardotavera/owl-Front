@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RegisterPage } from './register.page';
 
 
 
 const routes: Routes = [
   {
-    path: 'tabs',
-    loadChildren: () => import('../../layout/tablinks/tablinks.module').then(m => m.TablinksPageModule)
+    path: '',
+    component: RegisterPage
   },
  
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
+    RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class RegisterPageRoutingModule {}

@@ -142,3 +142,29 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+ion-button {
+  --background: #1ce8a4;
+  --background-activated: #1ce8a4;
+  --background-activated-opacity: 1;
+  --background-focused: #1ce8a4;
+  --background-focused-opacity: 1;
+  --background-hover: #1ce8a4;
+  --background-hover-opacity: 1;
+  --border-color: #1ce8a4;
+  --border-radius: 8px;
+  --border-style: solid;
+  --border-width: 8px;
+  --box-shadow: 10px 10px;
+  --color: #ffffff;
+  --color-activated: #ffffff;
+  --color-focused: #ffffff;
+  --color-hover: #ffffff;
+  --opacity: 1;
+  --padding-bottom: 4px;
+  --padding-end: 4px;
+  --padding-start: 4px;
+  --padding-top: 4px;
+  --ripple-color: #1e1e1e;
+  --transition: background-color 15ms linear;
+}

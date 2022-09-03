@@ -13,6 +13,14 @@ const routes: Routes = [
     loadChildren: () => import('./layout/tablinks/tablinks.module').then(m => m.TablinksPageModule)
   },
   {
+    path: 'login',
+    loadChildren: () => import('./views/login/login.module').then(m => m.LoginPageModule)
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./views/register/register.module').then(m => m.RegisterPageModule)
+  },
+  {
     path: '',
     redirectTo: 'welcome',
     pathMatch: 'full'
