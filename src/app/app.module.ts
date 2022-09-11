@@ -6,15 +6,17 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TablinksPageModule } from './layout/tablinks/tablinks.module';
 import { WelcomePageModule} from './welcome/welcome.module';
+import { GlobalService } from './services/global.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot({
+  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot({
     mode: 'ios'
 }), AppRoutingModule, TablinksPageModule, WelcomePageModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, GlobalService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
