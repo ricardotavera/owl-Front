@@ -64,7 +64,8 @@ export class MapPickerComponent implements OnInit {
     
     circle.setLatLng(marker.getLatLng())
 
-   
+      console.log(marker.getLatLng().lat)
+      console.log(marker.getLatLng().lng)  
 });
 
 

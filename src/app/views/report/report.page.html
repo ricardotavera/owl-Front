@@ -11,11 +11,11 @@
         <br>
         <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
         <ion-item>
-            <ion-label position="stacked" >Crimen</ion-label>
-            <ion-select placeholder="Seleccione una modalidad">
+            <ion-label position="stacked" >Modalidad del Crimen</ion-label>
+            <ion-select placeholder="Seleccione una modalidad" value="reportData.crimeType" name="crimeType">
                 <ion-select-option value="atraco">Atraco</ion-select-option>
                 <ion-select-option value="acoso">Acoso sexual</ion-select-option>
-                <ion-select-option value="sin intimidacion">Robo sin intimidacion</ion-select-option>
+                <ion-select-option value="sin intimidacion">Robo fugitivo</ion-select-option>
             </ion-select>
         </ion-item>
         <br>
@@ -23,11 +23,11 @@
         <ion-item>
             <ion-label position="stacked" style="padding: 5px;">Fecha y Hora</ion-label>
             <br>
-            <ion-datetime-button datetime="datetime"></ion-datetime-button>
+            <ion-datetime-button datetime="datetime" value="reportData.date" name="theDate"></ion-datetime-button>
 
             <ion-modal [keepContentsMounted]="true">
                 <ng-template>
-                    <ion-datetime id="datetime"></ion-datetime>
+                    <ion-datetime id="datetime" value="reportData.time" name="theTime"></ion-datetime>
                 </ng-template>
             </ion-modal>
             <br>
@@ -40,14 +40,14 @@
                 <ion-button (click)="openMapPicker()" id="open-picker" color="success">
                     Selecciona la ubicacion
                  </ion-button>
-                 <span id="crime-location"></span>
+                 <span id="crime-location" value="reportData.location" name="location"></span>
             </div>
            
         </ion-item>
         <br>
         <ion-item>
             <ion-label position="stacked">Detalles</ion-label>
-            <ion-textarea type="text"  placeholder="Describa detalles sobre el crimen" style="    height: 122px;"></ion-textarea>
+            <ion-textarea type="text" value="reportData.detail" name="detail" placeholder="Describa detalles sobre el crimen" style="    height: 122px;"></ion-textarea>
             
         </ion-item>
         <br>

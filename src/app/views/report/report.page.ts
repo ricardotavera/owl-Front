@@ -17,6 +17,7 @@ export class ReportPage implements OnInit {
 
   map: L.Map;
   handlerMessage = '';
+  reportData = {}
 
   constructor(public modalCtrl: ModalController,
     private alertController: AlertController) { }
