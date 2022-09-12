@@ -2,10 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { MapPickerComponent } from '../map-picker/map-picker.component'
 import * as L from 'leaflet';
-import { IonModal } from '@ionic/angular';
-import { OverlayEventDetail } from '@ionic/core/components';
 import 'leaflet.smooth_marker_bouncing'
 import { AlertController } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -18,6 +17,8 @@ export class ReportPage implements OnInit {
   map: L.Map;
   handlerMessage = '';
   reportData = {}
+  pickerLat:string = ''
+  pickerLng:string = ''
 
   constructor(public modalCtrl: ModalController,
     private alertController: AlertController) { }
@@ -26,7 +27,9 @@ export class ReportPage implements OnInit {
     
   }
 
-  
+  submitReport(f){
+    console.log(f.value)
+  }
 
 
   async openMapPicker() {
