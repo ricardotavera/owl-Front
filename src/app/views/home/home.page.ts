@@ -20,7 +20,7 @@ export class HomePage implements OnInit {
 
   ngOnInit() { 
 
-    this.getData()
+    
 
    }
 
@@ -38,6 +38,8 @@ export class HomePage implements OnInit {
 
 
   ionViewDidEnter() { 
+    
+    this.getData()
     
    /*  Create map and mapping markers */
     this.leafletMap();

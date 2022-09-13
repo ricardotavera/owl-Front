@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import * as L from 'leaflet';
 import 'leaflet.smooth_marker_bouncing'
+import { NavParams } from '@ionic/angular';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class MapPickerComponent implements OnInit {
 
 
 
-  constructor(public modalCtrl: ModalController) { }
+  constructor(public modalCtrl: ModalController,
+    public navParams: NavParams) { }
 
   ngOnInit() {
     
@@ -54,7 +56,7 @@ export class MapPickerComponent implements OnInit {
       shadowAnchor: [22, 54]
   });
     
-    const marker = new L.marker({ lat: 7.13366, lng: -73.11934 }, {
+    const marker = new L.marker([this.navParams.get('lat'),  this.navParams.get('lng')], {
       draggable: 'true', icon: locIcon
     }).addTo(this.map);
     
@@ -70,7 +72,8 @@ export class MapPickerComponent implements OnInit {
   
 
 
-  marker.on('dragend', function (e) 
+  marker.on('dragend', this.getMarkerData(marker.getLatLng()) );
+  
   {
     
     marker.bindPopup(
@@ -85,23 +88,25 @@ export class MapPickerComponent implements OnInit {
       
       circle.setLatLng(marker.getLatLng())
        
-        console.log(marker.getLatLng())
+        
       
-  });
-  
+  };
   
 
    }
 
 
-getMarkerData(){
+getMarkerData(e){
+
+ this.pickerLoc = e;
+
  
 }
 
 confirm() {
 
     
-    this.dismiss();
+    
     this.modalCtrl.dismiss(this.pickerLoc);
       
 }
