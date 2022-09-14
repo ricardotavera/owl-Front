@@ -1,9 +1,21 @@
 .location-data {
     width: 100%;
     display: flex;
-    justify-content: space-between; 
+    flex-direction: column;
  
     span {
         color: #808080;
     }
+}
+
+
+.report-form{
+   padding: 5px;
+}
+
+#crime-location{
+
+    text-align: center;
+    /* color: #2dd36f; */
+    font-size: small;
 }
