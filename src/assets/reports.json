@@ -1,29 +1,29 @@
 [
     {
-       "modality":1,
-       "description":"Hombre rapo celular y salio corriendo",
-       "title": "Robo e intimidacion a peaton",
+       "modalidad":1,
+       "descripcion":"Hombre rapo celular y salio corriendo",
+       "titulo": "Robo e intimidacion a peaton",
        "lat":7.138170,
        "lng":-73.121130,
-       "date":"Septimebre 11, 2022",
-       "time":"9:40 AM"
+       "dia":"Sephorabre 11, 2022",
+       "hora":"9:40 AM"
     },
     {
-       "modality":1,
-       "description":"Hombre rapo celular y salio corriendo",
-       "phrase_description": "Hombre rapo celular y salio corriendo",
+       "modalidad":1,
+       "descripcion":"Hombre rapo celular y salio corriendo",
+       "titulo": "Hombre rapo celular y salio corriendo",
        "lat":7.136807,
        "lng":-73.122589,
-       "date":"Septimebre 11, 2022",
-       "time":"9:40 AM"
+       "dia":"Sephorabre 11, 2022",
+       "hora":"9:40 AM"
     },
     {
-       "modality":2,
-       "description":"Hombre rapo celular y salio corriendo",
-       "phrase_description": "Hombre rapo celular y salio corriendo",
+       "modalidad":2,
+       "descripcion":"Hombre rapo celular y salio corriendo",
+       "titulo": "Hombre rapo celular y salio corriendo",
        "lat":7.131807,
        "lng":-73.1243589,
-       "date":"Septimebre 11, 2022",
-       "time":"9:40 AM"
+       "dia":"Sephorabre 11, 2022",
+       "hora":"9:40 AM"
     }
  ]

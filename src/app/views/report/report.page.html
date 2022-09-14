@@ -7,22 +7,18 @@
 
     <ion-content class="ion-padding">
         <br>
-        <form #f="ngForm" (ngSubmit)="submitReport(f)" class="report-form">
+        <form #f="ngForm" (ngSubmit)="submitReport(f)" class="report-form" >
         <ion-item>
-            <ion-label position="stacked" >Selecciona tipo de crimen</ion-label>
-            <ion-select placeholder="Seleccione una modalidad" name="crimeType" ngModel>
-                <ion-select-option value="1">Atraco</ion-select-option>
-                <ion-select-option value="2">Acoso sexual</ion-select-option>
-                <ion-select-option value="3">Robo fugitivo</ion-select-option>
-                  <ion-select-option value="4">Amenaza</ion-select-option>
-                  <ion-select-option value="5">Robo en casa</ion-select-option>
+            <ion-label position="stacked" >Selecciona tipo de crimen*</ion-label>
+            <ion-select placeholder="Seleccione una modalidad"  name="modalidad" ngModel required>
+                    <ion-select-option *ngFor="let item of modalities$" [value]="item.id">{{item.name}}</ion-select-option>
             </ion-select>
         </ion-item>
         <br>
         <ion-item>
-            <ion-label position="stacked" style="padding: 5px;">Fecha y Hora</ion-label>
+            <ion-label position="stacked" style="padding: 5px;">Fecha y Hora*</ion-label>
             <br>
-            <ion-datetime-button datetime="datetime"></ion-datetime-button>
+            <ion-datetime-button datetime="datetime" required></ion-datetime-button>
 
             <ion-modal [keepContentsMounted]="true">
               <ng-template>
@@ -34,11 +30,11 @@
         </ion-item>
         <br>
         <ion-item>
-            <ion-label position="stacked">Ubicacion</ion-label>
+            <ion-label position="stacked">Ubicacion*</ion-label>
             <br>
             <div class="location-data">
                 
-                <span id="crime-location" > Lat: {{pickerLat}}, Lng: {{pickerLng}}</span>
+                <span id="crime-location" > Lat: {{picker.lat}}, Lng: {{picker.lng}}</span>
                 <ion-button (click)="openMapPicker()" id="open-picker" color="success">
                     Seleccionar la ubicacion
                  </ion-button>
@@ -51,7 +47,7 @@
         <br>
         <ion-item>
             <ion-label position="stacked">Descripcion corta*</ion-label>
-        <ion-input placeholder="Maxio 25 caracteres" maxlenght="25" name="title" ngModel type="text" ></ion-input>
+        <ion-input required placeholder="Maxio 25 caracteres" maxlenght="25" name="title" ngModel type="text" ></ion-input>
    
         </ion-item>
         <br>
@@ -60,12 +56,14 @@
             <ion-textarea type="text" ngModel name="description" placeholder="Describa detalles sobre el crimen" style="    height: 122px;"></ion-textarea>
         </ion-item>
         <br>
-        <ion-button type="submit" expand="block" color="success">
+        <ion-button type="submit" [disabled]="!f.valid" expand="block" color="success">
 
              Publicar
         </ion-button>
         </form>
-        
+        <br>
+        <br>
+        <br>
     </ion-content>
 
     

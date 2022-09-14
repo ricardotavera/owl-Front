@@ -21,29 +21,33 @@ export class HomePage implements OnInit {
   ngOnInit() { 
 
     
-
+    this.getData()
    }
 
    
 
 
-   getData(){
-
+   async getData(){
+    
      /* Getting data from service */
      this.globalService.getReports().subscribe( (res) => {
+      console.log(res)
       this.reportList = res;
      });
+     await new Promise(f => setTimeout(f, 1000));
 
    }
 
 
   ionViewDidEnter() { 
     
-    this.getData()
     
+  
+
    /*  Create map and mapping markers */
     this.leafletMap();
-    this.mapMarkers(this.reportList); }
+    this.mapMarkers(this.reportList); 
+  }
  
 
   leafletMap() {
@@ -60,6 +64,18 @@ export class HomePage implements OnInit {
     
    
   }
+
+/*   async login() {
+    const modal = await this.modalCtrl.create({
+      component: LoginPage,
+      animated: true,
+      mode: 'ios',
+      backdropDismiss: false,
+      cssClass: 'login-modal',
+    })
+
+    return await modal.present();
+  } */
 
 
   mapMarkers(markers) {
@@ -83,23 +99,20 @@ export class HomePage implements OnInit {
       marker.addTo(this.map)
 
 
-
-      var customOptions =
-        {
-        'maxWidth': '500',
-        'class' : 'popup'
-        }
-
       marker.bindPopup(`
       <div>
-      <div class="card-body">
-        <h5 class="card-title">${m.date}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">${m.time}</h6>
-        <p class="card-text">${m.phrase_description}</p>
-        <ion-button (click)="onClick()" fill="clear" shape="round">
-        <ion-icon name="checkmark-circle"></ion-icon>
-            <ion-label>Ver mas</ion-label>
+      <div class="card-body" style="font-family: sans-serif;">
+        <h5 class="card-title" style="font-weight: bold; margin-bottom: -17px;">  ${m.dia}</h5>
+        <h6 class="card-subtitle mb-2 text-muted style="color: grey">${m.hora}</h6>
+        <h6 class="card-text" style="style="color: grey"">${m.titulo}</h6>
+        <div styel="display: flex;
+        flex-direction: row;
+        justify-content: flex-end;">
+        <ion-button (click)="onClick()" fill="clear" shape="round" size="m" slot="start">
+           Detalles
+        <ion-icon name="arrow-forward-circle">Ver mas</ion-icon>
       </ion-button>
+      </div>
       </div>
     </div>`,
       {closeButton: false, className: 'repot-popup'})
