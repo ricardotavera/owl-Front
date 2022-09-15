@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, NavParams } from '@ionic/angular';
 import * as L from 'leaflet';
 import 'leaflet.smooth_marker_bouncing'
-import { NavParams } from '@ionic/angular';
-import { getLocaleDateFormat } from '@angular/common';
-
 
 @Component({
   selector: 'app-map-picker',
@@ -39,7 +36,7 @@ export class MapPickerComponent implements OnInit {
   leafletMap() {
 
     this.map = L.map('mapPicker', {
-      center: [7.13366, -73.11934],
+      center: [this.navParams.get('lat'), this.navParams.get('lng')],
       zoom: 15,
       renderer: L.canvas()
     });

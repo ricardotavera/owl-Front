@@ -1,12 +1,33 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Detalles de Reporte</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()" ><ion-icon name="arrow-back-sharp"></ion-icon></ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
-  <ion-list>
-    <ion-item>
-      <ion-label>Awesome Label</ion-label>
-    </ion-item>
-  </ion-list>
+  
+  <ion-card>
+    <ion-card-content>
+      <ion-title>{{report.titulo}}</ion-title>
+     
+     
+    </ion-card-content>
+
+    <ion-content>
+      <ion-card-subtitle>{{report.fecha}}</ion-card-subtitle>
+    </ion-content>
+    
+    <ion-card-content>
+      <ion-card-subtitle>Modalidad</ion-card-subtitle>
+      {{modality}}
+    </ion-card-content>
+    
+    <ion-card-content>
+      <ion-card-subtitle>Detalles</ion-card-subtitle>
+      {{report.descripcion}}
+    </ion-card-content>
+  </ion-card>
 </ion-content>

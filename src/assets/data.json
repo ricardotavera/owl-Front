@@ -1,0 +1,38 @@
+[
+    {
+       "id":1,
+       "fecha":"2022-09-11T15:34:42z",
+       "descripcion":"Unos hombres en motocicleta atracaron una joven",
+       "titulo":"continuan los robos",
+       "lat":"7.1316",
+       "lng":"-73.1175",
+       "modalidad_id":5
+    },
+    {
+       "id":2,
+       "fecha":"2022-09-13T19:20:42z",
+       "descripcion":"Un ladron tenia amenazado un joven con cuhillo y le robo el telefono",
+       "titulo":"otro robo mas en esta zona",
+       "lat":"7.1296",
+       "lng":"-73.118",
+       "modalidad_id":2
+    },
+    {
+       "id":3,
+       "fecha":"2022-09-9T12:20:42z",
+       "descripcion":"Un hombre que se movilizaba de pato en motocicleta se bajo e intento apuñalar a otro",
+       "titulo":"mucha inseguridad",
+       "lat":"7.1377",
+       "lng":"-73.1273",
+       "modalidad_id":6
+    },
+    {
+       "id":4,
+       "fecha":"2022-09-11T12:25:42z",
+       "descripcion":"4 personas intentan robar una tienda pero no alcanzan por rapida reaccion",
+       "titulo":"intento de fleteo",
+       "lat":"7.1276",
+       "lng":"-73.1241",
+       "modalidad_id":4
+    }
+ ]

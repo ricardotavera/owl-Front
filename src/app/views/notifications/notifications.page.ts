@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { GlobalService } from 'src/app/services/global.service';
+import { ReportInfoComponent } from '../report-info/report-info.component';
 
 @Component({
   selector: 'app-notifications',
@@ -9,30 +12,44 @@ import { Router } from '@angular/router';
 
 
 export class NotificationsPage implements OnInit {
-   
-  
-   posts = []
+
+
+  posts = []
 
 
 
-  constructor( private router: Router) { 
-    
+  constructor(private router: Router,
+    private globalService: GlobalService,
+    private modalCtrl: ModalController) {
+
   }
 
   ngOnInit() {
-
-    
-    for(let i=0; i<50; i++){
-      this.posts[i]  = { title: `Post ${i}`, date: new Date().toDateString(), location: 'Place'}
-    }
-
-    
+    this.getData()
   }
 
 
-  goToMap(){
-    this.router.navigateByUrl('/tabs'); 
+  getData(){
+    this.globalService.getReports().subscribe( (res) => {
+      this.posts = res
+    })
+    this.posts.map( (item) => {
+      item.fecha = new Date(item.fecha)
+    })
+
   }
 
+
+  async openInfoPanel(report) {
+    const modal = await this.modalCtrl.create({
+      component: ReportInfoComponent,
+      componentProps: report,
+      animated: true,
+      mode: 'ios',
+      backdropDismiss: false,
+    })
+
+    return await modal.present();
+  }
 
 }

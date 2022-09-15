@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as Leaflet from 'leaflet';
 import { GlobalService } from 'src/app/services/global.service';
 import { ModalController } from '@ionic/angular';
+import { ReportInfoComponent } from '../report-info/report-info.component';
 
 
 
@@ -27,14 +28,13 @@ export class HomePage implements OnInit {
    
 
 
-   async getData(){
+   getData(){
     
      /* Getting data from service */
      this.globalService.getReports().subscribe( (res) => {
-      console.log(res)
       this.reportList = res;
      });
-     await new Promise(f => setTimeout(f, 1000));
+     
 
    }
 
@@ -46,7 +46,8 @@ export class HomePage implements OnInit {
 
    /*  Create map and mapping markers */
     this.leafletMap();
-    this.mapMarkers(this.reportList); 
+    this.mapMarkers(this.reportList);
+     
   }
  
 
@@ -90,8 +91,10 @@ export class HomePage implements OnInit {
       shadowAnchor: [22, 54]
   });
 
-    console.log(markers)
+    
     markers.map( (m) => {
+
+      m.fecha = new Date(m.fecha);
 
       const marker = Leaflet.marker ({ lat: m.lat, lng: m.lng},
                                       {draggable: false, icon: locIcon});
@@ -102,25 +105,42 @@ export class HomePage implements OnInit {
       marker.bindPopup(`
       <div>
       <div class="card-body" style="font-family: sans-serif;">
-        <h5 class="card-title" style="font-weight: bold; margin-bottom: -17px;">  ${m.dia}</h5>
-        <h6 class="card-subtitle mb-2 text-muted style="color: grey">${m.hora}</h6>
+        <h5 class="card-title" style="font-weight: bold; margin-bottom: -17px;">  ${m.fecha.toDateString()}</h5>
+        <h6 class="card-subtitle mb-2 text-muted style="color: grey">${m.fecha.toLocaleTimeString()}</h6>
         <h6 class="card-text" style="style="color: grey"">${m.titulo}</h6>
-        <div styel="display: flex;
-        flex-direction: row;
-        justify-content: flex-end;">
-        <ion-button (click)="onClick()" fill="clear" shape="round" size="m" slot="start">
-           Detalles
-        <ion-icon name="arrow-forward-circle">Ver mas</ion-icon>
+        <div id="detail-button">
+  
       </ion-button>
       </div>
       </div>
     </div>`,
       {closeButton: false, className: 'repot-popup'})
 
-
     })
 
+
+    var circle = Leaflet.circle([this.reportList[0].lat, this.reportList[0].lng], {
+      color: 'red',
+      fillColor: '#f03',
+      weight: 1,
+      fillOpacity: 0.1,
+      radius: 500
+  }).addTo(this.map);
+
   }
+async openInfoPanel(report) {
+  
+  const modal = await this.modalCtrl.create({
+  component: ReportInfoComponent,
+  componentProps: report,
+  animated: true,
+  mode: 'ios',
+  backdropDismiss: false,
+})
+
+return await modal.present();
+}
+
 
 
   ionViewWillLeave() {

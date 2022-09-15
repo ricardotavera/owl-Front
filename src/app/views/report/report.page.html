@@ -11,7 +11,7 @@
         <ion-item>
             <ion-label position="stacked" >Selecciona tipo de crimen*</ion-label>
             <ion-select placeholder="Seleccione una modalidad"  name="modalidad" ngModel required>
-                    <ion-select-option *ngFor="let item of modalities$" [value]="item.id">{{item.name}}</ion-select-option>
+                    <ion-select-option *ngFor="let item of modalities$" [value]="item.id">{{item.nombre}}</ion-select-option>
             </ion-select>
         </ion-item>
         <br>

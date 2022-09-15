@@ -55,7 +55,7 @@ export class ReportPage implements OnInit {
 
 
     if (!(this.picker.lat && this.picker.lng) ){
-      this.presentToast('top', 'Seleccione una ubicacion del hecho')
+      this.presentToast('top', 'Recuerda seleccionar una ubicacion')
     }else{
     this.globalService.sendReport(f.value, Number(this.picker.lat), Number(this.picker.lng)).subscribe(
       (response) => {                           //Next callback
