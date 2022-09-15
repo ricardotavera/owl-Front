@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, NavParams } from '@ionic/angular';
 import * as L from 'leaflet';
 import 'leaflet.smooth_marker_bouncing'
-import { NavParams } from '@ionic/angular';
-import { getLocaleDateFormat } from '@angular/common';
-
 
 @Component({
   selector: 'app-map-picker',

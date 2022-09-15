@@ -15,9 +15,15 @@ export class GlobalService {
 
 
   private HOST_URL = 'https://c3d8e71c-6c72-46f2-8f08-618964814e5a.mock.pstmn.io'
-  public reports = []
 
-  constructor(private http: HttpClient) { }
+  public modalities:Observable<Modality[]>
+
+
+  constructor(private http: HttpClient) { 
+
+    this.modalities = this.getModalities();
+  
+  }
 
   getReports(): Observable <Report[]>{
     
@@ -31,8 +37,7 @@ export class GlobalService {
     {
       titulo: formValues.title,
       modalidad: formValues.modality,
-      dia: formValues.time.slice(0, 10),
-      hora: formValues.time,
+      fecha: formValues.time,
       descripcion: formValues.description,
       lat: lat,
       lng: lng

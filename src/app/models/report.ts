@@ -1,8 +1,6 @@
 export interface Report {
-    modality: number,
-    description: string,
+    modalidad_id: number,
+    descripcion: string,
     lat: number,
     lng: number,
-    date: string,
-    time: string
-}
+    fecha: string}

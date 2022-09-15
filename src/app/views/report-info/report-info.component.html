@@ -1,12 +1,27 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Detalles de Reporte</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()" ><ion-icon name="arrow-back-sharp"></ion-icon></ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
-  <ion-list>
-    <ion-item>
-      <ion-label>Awesome Label</ion-label>
-    </ion-item>
-  </ion-list>
+  
+  <ion-card>
+    <ion-card-content>
+      <ion-title>{{report.titulo}}</ion-title>
+      <ion-card-subtitle>{{report.fecha.toDateString()}} - {{report.fecha.toLocaleTimeString()}}</ion-card-subtitle>
+     
+    </ion-card-content>
+    <ion-card-content>
+      <ion-label>Modalidad</ion-label>
+      <p>{{modality.name}}</p>
+    </ion-card-content>
+    <ion-card-content>
+      <ion-label>Detalles</ion-label>
+      {{report.descripcion}}
+    </ion-card-content>
+  </ion-card>
 </ion-content>

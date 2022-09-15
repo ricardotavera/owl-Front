@@ -11,20 +11,19 @@
 
       <ion-list>
         <ion-item>
-          <ion-select placeholder="Elige barrio">
-            <ion-select-option value="San alonso">San Alonso</ion-select-option>
-            <ion-select-option value="La universidad">La universidad</ion-select-option>
-            <ion-select-option value="San francisco">San Francisco</ion-select-option>
+          <ion-select placeholder="Elige tu cai" >
+            <ion-select-option *ngFor="let item of cais"  [value]="item.id" >{{items.nombre}}</ion-select-option> 
           </ion-select>
         </ion-item>
       </ion-list>
 
-      <ion-item>
-        <ion-label>
-          <p>Informacion del CAI</p>
-        </ion-label>
-      </ion-item>
-    </div>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Telefono</ion-card-subtitle>
+        <ion-card-title>{{telefono}}</ion-card-title>
+      </ion-card-header>
+      
+    </ion-card>
  
     <br>
     <ion-card>
