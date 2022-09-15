@@ -36,7 +36,7 @@ export class MapPickerComponent implements OnInit {
   leafletMap() {
 
     this.map = L.map('mapPicker', {
-      center: [7.13366, -73.11934],
+      center: [this.navParams.get('lat'), this.navParams.get('lng')],
       zoom: 15,
       renderer: L.canvas()
     });

@@ -13,7 +13,7 @@ import { GlobalService } from 'src/app/services/global.service';
 export class ReportInfoComponent implements OnInit {
 
   report = {}      
-  modality = []
+  modality:string;
   constructor(private modalCtrl: ModalController,
     public navParams: NavParams,
     private globalService: GlobalService
@@ -22,12 +22,20 @@ export class ReportInfoComponent implements OnInit {
   ngOnInit() {
     this.report = this.navParams.data;
     this.getModalities();
+    
   }
 
   getModalities(){
     this.globalService.modalities.subscribe((res) => {
-      this.modality = res.filter( x => x.id === this.navParams.get('modalidad_id'))
+      res.map((it)=> {
+        if (it.id == this.navParams.get('modalidad_id') ){
+          this.modality = it.nombre;
+        }
+      })
+      
     })
+
+    
   }
 
   async dismiss() {

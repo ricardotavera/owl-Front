@@ -12,15 +12,21 @@
   <ion-card>
     <ion-card-content>
       <ion-title>{{report.titulo}}</ion-title>
-      <ion-card-subtitle>{{report.fecha.toDateString()}} - {{report.fecha.toLocaleTimeString()}}</ion-card-subtitle>
+     
      
     </ion-card-content>
+
+    <ion-content>
+      <ion-card-subtitle>{{report.fecha}}</ion-card-subtitle>
+    </ion-content>
+    
     <ion-card-content>
-      <ion-label>Modalidad</ion-label>
-      <p>{{modality.name}}</p>
+      <ion-card-subtitle>Modalidad</ion-card-subtitle>
+      {{modality}}
     </ion-card-content>
+    
     <ion-card-content>
-      <ion-label>Detalles</ion-label>
+      <ion-card-subtitle>Detalles</ion-card-subtitle>
       {{report.descripcion}}
     </ion-card-content>
   </ion-card>

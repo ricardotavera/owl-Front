@@ -9,14 +9,12 @@ import { GlobalService } from 'src/app/services/global.service';
 })
 export class InfoPage {
 
-  cais = []
-  telefono = '23224334'
+  cais$ = []
+  telefono:string;
 
   constructor(private alertController: AlertController,
     private globalService: GlobalService) { }
-
-
-
+ 
   ngOnInit() {
 
     this.getCais();
@@ -26,7 +24,8 @@ export class InfoPage {
 
   getCais() {
     this.globalService.getCais().subscribe((res) => {
-      this.cais = res;
+      this.cais$ = res;
+   
     })
   }
 

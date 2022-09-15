@@ -14,7 +14,7 @@ import { Modality } from '../models/modality';
 export class GlobalService {
 
 
-  private HOST_URL = 'https://c3d8e71c-6c72-46f2-8f08-618964814e5a.mock.pstmn.io'
+  private HOST_URL = 'https://aa805702-0f8c-4edc-919f-d49a5ece66da.mock.pstmn.io'
 
   public modalities:Observable<Modality[]>
 
@@ -27,7 +27,7 @@ export class GlobalService {
 
   getReports(): Observable <Report[]>{
     
-    return this.http.get<Report[]>(`${this.HOST_URL}/api/reportes`)
+    return this.http.get<Report[]>(`assets/data.json`)
             
   }
 
